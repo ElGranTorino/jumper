@@ -1,7 +1,7 @@
 import { COLORS } from "../data/global";
 import Canvas from "./Canvas";
 
-type ComponentColor = 'black' | 'white';
+export type ComponentColor = 'black' | 'white';
 
 export class Component {
     readonly x: number;

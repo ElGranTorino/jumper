@@ -1,3 +1,6 @@
+import { COLORS } from "../data/global";
+import { ComponentColor } from "./Components";
+
 export interface CanvasElement {
     x: number;
     y: number;
@@ -67,9 +70,16 @@ export default class Canvas {
         this.ctx.font = font;
         this.ctx.fillText(text, x, y);
     }
-
-    public setBackground() {
-
+    public setBackground(color: ComponentColor) {
+        const {white, black} = COLORS;
+        this.clear();
+        this.drawRect({
+            height: innerHeight,
+            width: innerWidth,
+            x: 0,
+            y: 0,
+            color: color === 'white' ? white : black
+        });
     }
     public clear(){
         this.ctx.clearRect(0, 0, innerWidth, innerHeight)
